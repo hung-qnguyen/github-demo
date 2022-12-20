@@ -1,44 +1,42 @@
 package com.example.gitdemo;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.TextView;
 
-import com.example.gitdemo.adapters.Adapter;
+import com.example.gitdemo.adapters.MenuAdapter;
 import com.example.gitdemo.models.Menu;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ArrayList<Menu> mMenu = new ArrayList<>();
+    private List<Menu> mMenu = new ArrayList<>();
     private RecyclerView mRecyclerView;
-    private Adapter mAdapter;
+    private MenuAdapter mMenuAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mRecyclerView = findViewById(R.id.test_recyclerView);
-
-        mAdapter = new Adapter(mMenu);
-        mRecyclerView.setAdapter(mAdapter);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView = findViewById(R.id.menu_rv);
+        mMenuAdapter = new MenuAdapter(this);
+        mRecyclerView.setAdapter(mMenuAdapter);
+        mRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         AddDummyData(mMenu);
-       
+        mMenuAdapter.setMenu(mMenu);
+        
 
     }
 
-    public void AddDummyData(ArrayList<Menu> menu){
+    public void AddDummyData(List<Menu> menu){
         for (int i = 0; i<20; i++){
-            menu.add(new Menu("Title #"+i,"URL #"+i));
-
+            menu.add(new Menu("Drink Title #"+i,"https://cdn3.iconfinder.com/data/icons/watercolorcafe/512/Latte.png"
+                    , 4000*i));
         }
-        mAdapter.notifyDataSetChanged();
     }
 
 
