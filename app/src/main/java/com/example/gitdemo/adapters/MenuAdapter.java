@@ -46,13 +46,13 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.myViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull myViewHolder holder, int position) {
         holder.drinkName.setText(mMenu.get(position).getDrinkName());
-        holder.price.setText(String.valueOf(mMenu.get(position).getPrice()));
+        holder.tvPrice.setText(String.valueOf(mMenu.get(position).getPrice()));
         Glide.with(mContext)
                 .asBitmap()
                 .placeholder(R.drawable.drink_placeholder)
                 .load(mMenu.get(position).getImgURL())
                 .into(holder.drinkImage);
-        holder.addCartBtn.setOnClickListener(new View.OnClickListener() {
+        holder.detailsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(mContext, ItemDetailsActivity.class);
@@ -68,16 +68,16 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.myViewHolder> 
     }
 
     public class myViewHolder extends RecyclerView.ViewHolder{
-        private TextView drinkName, price;
+        private TextView drinkName, tvPrice;
         private ImageView drinkImage;
-        private Button addCartBtn;
+        private Button detailsBtn;
         private CardView cardView;
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
             drinkName = itemView.findViewById(R.id.menu_drink_name);
-            price = itemView.findViewById(R.id.menu_price);
+            tvPrice = itemView.findViewById(R.id.menu_price);
             drinkImage = itemView.findViewById(R.id.drink_img);
-            addCartBtn = itemView.findViewById(R.id.btn_add_cart);
+            detailsBtn = itemView.findViewById(R.id.btn_details);
 //            cardView = itemView.findViewById(R.id.cardView);
         }
     }

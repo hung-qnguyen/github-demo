@@ -7,13 +7,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 
 import com.example.gitdemo.adapters.MenuAdapter;
+import com.example.gitdemo.models.Cart;
 import com.example.gitdemo.models.Menu;
+import com.example.gitdemo.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
+    public static List<Cart> cartList=new ArrayList<>();
     private List<Menu> mMenu = new ArrayList<>();
     private RecyclerView mRecyclerView;
     private MenuAdapter mMenuAdapter;
@@ -26,18 +28,13 @@ public class MainActivity extends AppCompatActivity {
         mMenuAdapter = new MenuAdapter(this);
         mRecyclerView.setAdapter(mMenuAdapter);
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
-        AddDummyData(mMenu);
-        mMenuAdapter.setMenu(mMenu);
-        
+
+        mMenuAdapter.setMenu(Utils.getInstance().getAllDrinks());
+
 
     }
 
-    public void AddDummyData(List<Menu> menu){
-        for (int i = 0; i<20; i++){
-            menu.add(new Menu("Drink Title #"+i,"https://cdn3.iconfinder.com/data/icons/watercolorcafe/512/Latte.png"
-                    , 4000*i));
-        }
-    }
+
 
 
 }
