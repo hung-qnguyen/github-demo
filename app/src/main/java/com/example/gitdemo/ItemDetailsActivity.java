@@ -1,6 +1,6 @@
 package com.example.gitdemo;
 
-import static com.example.gitdemo.MainActivity.cartList;
+
 import static com.example.gitdemo.adapters.MenuAdapter.EXTRA_DETAILS;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,9 +33,12 @@ public class ItemDetailsActivity extends AppCompatActivity {
 
 
     private Cart cartItem;
+//    private List<Cart> mCartList = new ArrayList<>();
+    private Menu menuDetails;
     private String priceText;
     private int quantity = 1;
     private float price;
+    private float itemSubTotal;
     private boolean existInCart = false;
 
     @Override
@@ -45,8 +48,8 @@ public class ItemDetailsActivity extends AppCompatActivity {
         initViews();
         Intent intent = getIntent();
         if (getIntent().hasExtra(EXTRA_DETAILS)) {
-            Menu menuDetails = intent.getParcelableExtra(EXTRA_DETAILS);
-            handleAlreadyAdded(menuDetails);
+            menuDetails = intent.getParcelableExtra(EXTRA_DETAILS);
+            Utils.getInstance().handleAlreadyAdded(menuDetails);
             setDetailsData(menuDetails);
         }
         btnAdd.setOnClickListener(new View.OnClickListener() {
@@ -68,19 +71,24 @@ public class ItemDetailsActivity extends AppCompatActivity {
                 }
             }
         });
-        if (existInCart) {
+        if (Utils.getInstance().handleAlreadyAdded(menuDetails)) {
             btnAddCart.setEnabled(false);
         } else {
             btnAddCart.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     cartItem.setQuantity(quantity);
-                    cartList.add(cartItem);
+                    cartItem.setItemTotal(itemSubTotal);
+                    Utils.getInstance().addToCart(cartItem);
+//                    mCartList.add(cartItem);
+//                    Utils.getInstance().setCartList(mCartList);
                     Log.d(TAG_CHECK_CART, "Item name: " + cartItem.getMenuItem().getDrinkName()
                             + "\nItem quantity: " + cartItem.getQuantity()
-                            + "\nPosition: " + cartList.indexOf(cartItem));
+                            + "\nItem Total: " + cartItem.getItemTotal()
+                            + "\nPosition: " + Utils.getInstance().getCartList().indexOf(cartItem));
                     Toast.makeText(ItemDetailsActivity.this
                             , "Items Added to Cart", Toast.LENGTH_SHORT).show();
+                    btnAddCart.setEnabled(false);
                     btnCheckout.setVisibility(View.VISIBLE);
                 }
             });
@@ -91,18 +99,17 @@ public class ItemDetailsActivity extends AppCompatActivity {
             public void onClick(View view) {
 //                Toast.makeText(ItemDetailsActivity.this, "Checkout Button Clicked!", Toast.LENGTH_SHORT).show();
                 Intent detailsToCart = new Intent(ItemDetailsActivity.this, CartActivity.class);
-                detailsToCart.putExtra(EXTRA_DETAILS_TO_CART, cartItem);
+//                detailsToCart.putExtra(EXTRA_DETAILS_TO_CART, cartItem);
                 startActivity(detailsToCart);
             }
         });
-//btnReturn.setOnClickListener(new View.OnClickListener() {
-//    @Override
-//    public void onClick(View view) {
-//        Intent sendDataBack = new Intent();
-//        sendDataBack.putExtra()
-//
-//    }
-//});
+        btnReturn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+
+            }
+        });
     }
 
     private void initViews() {
@@ -127,24 +134,24 @@ public class ItemDetailsActivity extends AppCompatActivity {
                 .placeholder(R.drawable.drink_placeholder)
                 .load(menu.getImgURL())
                 .into(drinkImage);
-        cartItem = new Cart(menu, 0);
+        cartItem = new Cart(menu, 0, 0);
     }
 
     private void UpdateTvPrice() {
-        float itemSubTotal = quantity * price;
+        itemSubTotal = quantity * price;
         Log.d(TAG_CHECK_QUANT, "Subtotal is" + itemSubTotal);
         tvQuantity.setText(String.valueOf(quantity));
         priceText = String.valueOf(itemSubTotal) + " đồng";
         tvPrice.setText(priceText);
     }
 
-    private void handleAlreadyAdded(final Menu drinks) {
-        List<Cart> alreadyAddedToCart = Utils.getInstance().getCartList();
-        for (Cart c : alreadyAddedToCart) {
-            if (c.getMenuItem().getDrinkName().equals(drinks.getDrinkName())) {
-                existInCart = true;
-                break;
-            }
-        }
-    }
+//    private void handleAlreadyAdded(final Menu drinks) {
+//        List<Cart> alreadyAddedToCart = Utils.getInstance().getCartList();
+//        for (Cart c : alreadyAddedToCart) {
+//            if (c.getMenuItem().getDrinkName().equals(drinks.getDrinkName())) {
+//                existInCart = true;
+//                break;
+//            }
+//        }
+//    }
 }

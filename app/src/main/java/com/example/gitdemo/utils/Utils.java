@@ -64,4 +64,19 @@ public class Utils {
     public static void setCartList(List<Cart> cartList) {
         Utils.cartList = cartList;
     }
+
+    public boolean handleAlreadyAdded(Menu drinks) {
+        List<Cart> alreadyAddedToCart = Utils.getInstance().getCartList();
+        boolean existInCart = false;
+        for (Cart c : alreadyAddedToCart) {
+            if (c.getMenuItem().getDrinkName().equals(drinks.getDrinkName())) {
+                existInCart = true;
+
+            }
+        }
+        return existInCart;
+    }
+    public void addToCart(Cart cart){
+        cartList.add(cart);
+    }
 }

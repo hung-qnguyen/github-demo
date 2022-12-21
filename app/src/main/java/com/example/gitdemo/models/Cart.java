@@ -6,16 +6,20 @@ import android.os.Parcelable;
 public class Cart implements Parcelable {
     private Menu menuItem;
     private int quantity;
+    private float itemTotal;
     //TODO: Add ItemTotal and alreadyInCart to Cart Model
 
-    public Cart(Menu menuItem, int quantity) {
+
+    public Cart(Menu menuItem, int quantity, float itemTotal) {
         this.menuItem = menuItem;
         this.quantity = quantity;
+        this.itemTotal = itemTotal;
     }
 
     protected Cart(Parcel in) {
         menuItem = in.readParcelable(Menu.class.getClassLoader());
         quantity = in.readInt();
+        itemTotal = in.readFloat();
     }
 
     public static final Creator<Cart> CREATOR = new Creator<Cart>() {
@@ -46,6 +50,14 @@ public class Cart implements Parcelable {
         this.quantity = quantity;
     }
 
+    public float getItemTotal() {
+        return itemTotal;
+    }
+
+    public void setItemTotal(float itemTotal) {
+        this.itemTotal = itemTotal;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -55,5 +67,6 @@ public class Cart implements Parcelable {
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeParcelable(menuItem, i);
         parcel.writeInt(quantity);
+        parcel.writeFloat(itemTotal);
     }
 }
