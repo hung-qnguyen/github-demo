@@ -1,0 +1,54 @@
+package deso2.doandinhhoang.appcaphe;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+
+public class KhoiPhucMatKhauActivity extends AppCompatActivity {
+    EditText edtKPMKemail;
+    Button bntKPMKxacnhan;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_khoi_phuc_mat_khau);
+        anhxa();
+    }
+
+    private void anhxa() {
+        edtKPMKemail = findViewById(R.id.KPMK_email);
+        bntKPMKxacnhan = findViewById(R.id.KPMK_xacnhan);
+        bntKPMKxacnhan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                KhoiPhuc();
+            }
+        });
+    }
+
+    private void KhoiPhuc(){
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        String emailAddress = edtKPMKemail.getText().toString();
+
+        auth.sendPasswordResetEmail(emailAddress)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()){
+                            Toast.makeText(KhoiPhucMatKhauActivity.this, "Khôi phục thành công", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+
+                });
+    }
+}

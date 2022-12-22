@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/mau_A9"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/background" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="fitEnd"
+        android:src="@drawable/hatcaphegroup"
+        app:tint="#80826F66" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:foreground="#26000000"
+        android:scaleType="fitStart"
+        android:src="@drawable/hatvala" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="108dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/mulish_bold"
+            android:text="@string/Text1_DangNhap"
+            android:textColor="@color/mau_19"
+            android:textSize="24dp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="81dp"
+            android:fontFamily="@font/mulish_medium"
+            android:text="@string/Text2_DangNhap"
+            android:textColor="@color/mau_19"
+            android:textSize="13dp" />
+
+        <EditText
+            android:id="@+id/DN_email"
+            android:layout_width="354dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edt_radius"
+            android:fontFamily="@font/mulish_medium"
+            android:hint="@string/Text3_DangNhap"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="22dp"
+            android:textSize="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/mulish_medium"
+            android:text="@string/Text4_DangNhap"
+            android:textColor="@color/mau_19"
+            android:textSize="13dp" />
+
+        <!--        <EditText-->
+        <!--            android:id="@+id/DN_matkhauemail"-->
+        <!--            android:layout_width="354dp"-->
+        <!--            android:layout_height="56dp"-->
+        <!--            android:layout_marginTop="8dp"-->
+        <!--            android:background="@drawable/edt_radius"-->
+        <!--            android:fontFamily="@font/mulish_medium"-->
+        <!--            android:hint="@string/Text5_DangNhap"-->
+        <!--            android:inputType="textPassword"-->
+        <!--            android:paddingLeft="22dp"-->
+        <!--            android:textSize="16dp" />-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:hintEnabled="false"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/DN_matkhauemail"
+                android:layout_width="354dp"
+                android:layout_height="56dp"
+                android:background="@drawable/edt_radius"
+                android:fontFamily="@font/mulish_medium"
+                android:hint="@string/Text5_DangNhap"
+                android:inputType="textPassword"
+                android:paddingLeft="22dp"
+                android:textSize="16dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/DN_dangnhap"
+            android:layout_width="354dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/bt_radius_24"
+            android:fontFamily="@font/mulish_bold"
+            android:text="@string/Text1_DangNhap"
+            android:textAllCaps="false"
+            android:textColor="@color/mau_A9"
+            android:textSize="20dp" />
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="32dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+
+                android:src="@drawable/fb" />
+
+            <ImageView
+                android:id="@+id/icon_google"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:paddingStart="45.95dp"
+                android:scaleType="center"
+                android:src="@drawable/google" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:paddingStart="43.92dp"
+                android:paddingTop="3dp"
+                android:scaleType="centerCrop"
+
+                android:src="@drawable/twiter" />
+
+        </TableRow>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/mulish_medium"
+            android:text="@string/Text6_DangNhap"
+            android:textColor="@color/mau_19" />
+
+        <TextView
+            android:id="@+id/DN_resetmatkhau"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/mulish_bold"
+            android:text="@string/Text7_DangNhap"
+            android:textColor="@color/mau_4D"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/mulish_medium"
+            android:text="@string/Text8_DangNhap"
+            android:textColor="@color/mau_19"
+            android:textSize="13dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_Signup"
+            android:layout_width="121dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bt_radius_8"
+            android:text="@string/Text9_DangNhap"
+            android:textAllCaps="false"
+            android:textColor="#43414D" />
+
+
+    </LinearLayout>
+
+    <!--    <TableRow-->
+    <!--        android:layout_width="180dp"-->
+    <!--        android:layout_height="34dp"-->
+    <!--        android:layout_alignParentTop="true"-->
+    <!--        android:layout_centerHorizontal="true"-->
+    <!--        android:layout_marginTop="560dp">-->
+
+    <!--        <ImageView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_alignParentTop="true"-->
+
+    <!--            android:src="@drawable/fb" />-->
+
+    <!--        <ImageView-->
+    <!--            android:id="@+id/icon_google"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_alignParentTop="true"-->
+    <!--            android:paddingStart="45.95dp"-->
+    <!--            android:scaleType="center"-->
+    <!--            android:src="@drawable/google" />-->
+
+    <!--        <ImageView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_alignParentTop="true"-->
+    <!--            android:paddingStart="43.92dp"-->
+    <!--            android:paddingTop="3dp"-->
+    <!--            android:scaleType="centerCrop"-->
+
+    <!--            android:src="@drawable/twiter" />-->
+    <!--    </TableRow>-->
+
+
+</RelativeLayout>

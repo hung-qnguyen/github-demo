@@ -1,3 +1,35 @@
 <resources>
-    <string name="app_name">Git Demo</string>
+    <string name="app_name">AppCaPhe</string>
+    <string name="Text1_Intro">ROCAFE
+CHEAP,
+DILICIOUS &amp;
+SWIFT</string>
+    <string name="Text2_Intro">Enjoy quality brew
+with the finest of flavours</string>
+    <string name="Text3_Intro">Let\'s go</string>
+    <string name="Text1_DangNhap">Sign in</string>
+    <string name="Text2_DangNhap">Email or phone number</string>
+    <string name="Text3_DangNhap">example@email.com</string>
+    <string name="Text4_DangNhap">Password</string>
+    <string name="Text5_DangNhap">Enter your password</string>
+    <string name="Text6_DangNhap">Forgotton your password?</string>
+    <string name="Text7_DangNhap">Reset password</string>
+    <string name="Text8_DangNhap">Create an account</string>
+    <string name="Text9_DangNhap">Sign up</string>
+    <string name="Text1_DangKy">Sign in</string>
+    <string name="Text2_DangKy">Full name</string>
+    <string name="Text3_DangKy">First name and last name</string>
+    <string name="Text4_DangKy">Email</string>
+    <string name="Text5_DangKy">example@email.com</string>
+    <string name="Text6_DangKy">Phone number</string>
+    <string name="Text7_DangKy">xxxx xxx xxx</string>
+    <string name="Text8_DangKy">Password</string>
+    <string name="Text9_DangKy">At least 8 characters</string>
+    <string name="Text10_DangKy">Re-enter your password</string>
+    <string name="Text11_DangKy">Confirm password</string>
+    <string name="Text12_DangKy">Register</string>
+    <string name="Text13_DangKy">Already have an account?</string>
+    <string name="Text14_DangKy">Sign in</string>
+
+
 </resources>

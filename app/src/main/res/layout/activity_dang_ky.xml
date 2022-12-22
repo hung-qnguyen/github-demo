@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mau_A9"
+    tools:context=".DangKyActivity">
+
+    <!--    <TextView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_alignParentTop="true"-->
+    <!--        android:layout_centerHorizontal="true"-->
+    <!--        android:layout_marginTop="70dp"-->
+    <!--        android:fontFamily="@font/mulish_bold"-->
+    <!--        android:text="@string/Text1_DangKy"-->
+    <!--        android:textColor="@color/mau_19"-->
+    <!--        android:textSize="24dp" />-->
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:foreground="#26000000"
+        android:src="@drawable/background" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="center"
+        android:src="@drawable/baocaphe"
+        app:tint="@color/mau_66" />
+
+    <ImageView
+        android:layout_width="127.77dp"
+        android:layout_height="136dp"
+        android:layout_alignParentRight="true"
+        android:scaleType="center"
+        android:src="@drawable/canhcay" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="44dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/mulish_bold"
+            android:text="@string/Text1_DangKy"
+            android:textColor="@color/mau_19"
+            android:textSize="24dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:fontFamily="@font/mulish_medium"
+            android:text="@string/Text2_DangKy"
+            android:textColor="@color/mau_19"
+            android:textSize="13sp" />
+
+        <EditText
+            android:id="@+id/DK_name"
+            android:layout_width="354dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edt_radius"
+            android:hint="@string/Text3_DangKy"
+            android:inputType="text"
+            android:paddingStart="20dp"
+            android:textSize="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/mulish_medium"
+            android:text="@string/Text4_DangKy"
+            android:textColor="@color/mau_19"
+            android:textSize="13sp" />
+
+        <EditText
+            android:id="@+id/DK_email"
+            android:layout_width="354dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edt_radius"
+            android:hint="@string/Text5_DangKy"
+            android:inputType="textEmailAddress"
+            android:paddingStart="20dp"
+            android:textSize="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/mulish_medium"
+            android:text="@string/Text6_DangKy"
+            android:textColor="@color/mau_19"
+            android:textSize="13sp" />
+
+        <EditText
+            android:id="@+id/DK_phone"
+            android:layout_width="354dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edt_radius"
+            android:hint="@string/Text7_DangKy"
+            android:inputType="phone"
+            android:maxLength="10"
+            android:paddingStart="20dp"
+            android:textSize="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/mulish_medium"
+            android:text="@string/Text8_DangKy"
+            android:textColor="@color/mau_19"
+            android:textSize="13sp" />
+
+        <!--        <EditText-->
+        <!--            android:id="@+id/DK_mkemail"-->
+        <!--            android:layout_width="354dp"-->
+        <!--            android:layout_height="56dp"-->
+        <!--            android:layout_marginTop="8dp"-->
+        <!--            android:background="@drawable/edt_radius"-->
+        <!--            android:hint="@string/Text9_DangKy"-->
+        <!--            android:inputType="textPassword"-->
+        <!--            android:paddingStart="20dp"-->
+        <!--            android:textSize="16dp" />-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:hintEnabled="false"
+            android:layout_marginTop="8dp"
+            app:passwordToggleEnabled="true">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/DK_mkemail"
+
+                android:layout_width="354dp"
+                android:layout_height="56dp"
+                android:background="@drawable/edt_radius"
+                android:hint="@string/Text9_DangKy"
+                android:inputType="textPassword"
+                android:paddingStart="20dp"
+                android:textSize="16dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/mulish_medium"
+            android:text="@string/Text10_DangKy"
+            android:textColor="@color/mau_19"
+            android:textSize="13sp" />
+
+<!--        <EditText-->
+<!--            android:id="@+id/DK_xnmkemail"-->
+<!--            android:layout_width="354dp"-->
+<!--            android:layout_height="56dp"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:background="@drawable/edt_radius"-->
+<!--            android:hint="@string/Text11_DangKy"-->
+<!--            android:inputType="textPassword"-->
+<!--            android:paddingStart="20dp"-->
+<!--            android:textSize="16dp" />-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:hintEnabled="false"
+            android:layout_marginTop="8dp"
+            app:passwordToggleEnabled="true">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/DK_xnmkemail"
+                android:layout_width="354dp"
+                android:layout_height="56dp"
+                android:background="@drawable/edt_radius"
+                android:hint="@string/Text11_DangKy"
+                android:inputType="textPassword"
+                android:paddingStart="20dp"
+                android:textSize="16dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/DK_xacnhan"
+            android:layout_width="354dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="48dp"
+            android:background="@drawable/bt_radius_24"
+            android:fontFamily="@font/mulish_bold"
+            android:text="@string/Text12_DangKy"
+            android:textAllCaps="false"
+            android:textColor="@color/mau_A9"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="28dp"
+            android:text="@string/Text13_DangKy"
+            android:textColor="@color/black" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="124dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bt_radius_8"
+            android:text="@string/Text14_DangKy"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+
+</RelativeLayout>

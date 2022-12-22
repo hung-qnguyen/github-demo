@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mau_A9">
+
+    <ImageView
+        android:adjustViewBounds="true"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/hinhlycaphe" />
+
+    <ImageView
+        android:foreground="#26000000"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background" />
+
+    <ImageView
+        android:backgroundTintMode="screen"
+        android:layout_alignParentBottom="true"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="fitEnd"
+        android:src="@drawable/hatcaphegroup"
+        app:tint="#80826F66" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="245dp"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="46dp"
+        android:fontFamily="@font/mulish_extrabold"
+        android:text="@string/Text1_Intro"
+        android:textColor="#191919"
+        android:textSize="40dp" />
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/mulish_medium"
+        android:text="@string/Text2_Intro"
+        android:textColor="#191919"
+        android:textSize="20dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_intro"
+        android:layout_width="223dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="404dp"
+        android:background="@drawable/bt_radius_24"
+        android:fontFamily="@font/mulish_bold"
+        android:text="@string/Text3_Intro"
+        android:textAllCaps="false"
+        android:textColor="#C69B7B"
+        android:textSize="20dp" />
+
+
+</RelativeLayout>

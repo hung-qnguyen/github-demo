@@ -1,48 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/menu_rv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+<!--    <ImageView-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:layout_width="fill_parent"-->
+<!--        android:layout_height="fill_parent"-->
+<!--        android:src="@drawable/hinhintro" />-->
 
-    <SearchView
-        android:id="@+id/search_view"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_margin="8dp"
-        android:background="#D5D1D1"
-        android:queryHint="Search a term"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<!--    <TextView-->
+<!--        android:id="@+id/textView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textColor="#191919"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="142dp"-->
+<!--        android:fontFamily="@font/mulish_extrabold"-->
+<!--        android:text="@string/Text1_Intro"-->
+<!--        android:textSize="32dp" />-->
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:text="Sắp Xếp"
-        app:layout_constraintBottom_toBottomOf="@+id/menu_spinner"
-        app:layout_constraintEnd_toStartOf="@+id/menu_spinner"
-        app:layout_constraintTop_toTopOf="@+id/menu_spinner" />
 
-    <Spinner
-        android:id="@+id/menu_spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_view" />
+<!--    <TextView-->
+<!--        android:textAlignment="center"-->
+<!--        android:id="@+id/textView3"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/textView"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:fontFamily="@font/mulish_bold"-->
+<!--        android:text="@string/Text2_Intro"-->
+<!--        android:textColor="#191919"-->
+<!--        android:textSize="20dp" />-->
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+<!--    <androidx.appcompat.widget.AppCompatButton-->
+<!--        android:id="@+id/btn_intro"-->
+<!--        android:layout_width="223dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/textView3"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="464dp"-->
+
+<!--        android:background="@drawable/bt_radius_24"-->
+<!--        android:fontFamily="@font/mulish_bold"-->
+<!--        android:text="@string/Text3_Intro"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:textColor="#C69B7B"-->
+<!--        android:textSize="20dp" />-->
+
+</RelativeLayout>

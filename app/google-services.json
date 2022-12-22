@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "957675995473",
+    "project_id": "dangkythanhvien-424fd",
+    "storage_bucket": "dangkythanhvien-424fd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:957675995473:android:a9418aa61e82bdd16b5370",
+        "android_client_info": {
+          "package_name": "deso2.doandinhhoang.appcaphe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "957675995473-cn6b6alr6kuct6rsnon4p9nlq8vkfvhd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXH5egdjuYkuYuorZqPrYBC-06UPg-8QM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "957675995473-cn6b6alr6kuct6rsnon4p9nlq8vkfvhd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
