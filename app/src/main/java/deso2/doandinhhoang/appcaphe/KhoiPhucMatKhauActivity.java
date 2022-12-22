@@ -44,7 +44,7 @@ public class KhoiPhucMatKhauActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
-                            Toast.makeText(KhoiPhucMatKhauActivity.this, "Khôi phục thành công", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(KhoiPhucMatKhauActivity.this, "Please Check Your Mail", Toast.LENGTH_SHORT).show();
                         }
                     }
 

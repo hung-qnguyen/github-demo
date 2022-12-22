@@ -1,20 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".KhoiPhucMatKhauActivity">
 
-    <EditText
-        android:id="@+id/KPMK_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <Button
-        android:id="@+id/KPMK_xacnhan"
-        android:text="OK"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+    android:background="@color/mau_A9">
 
-</LinearLayout>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:foreground="#26000000"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background" />
+
+    <ImageView
+        android:layout_width="60.85dp"
+        android:layout_height="60.82dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60.11dp"
+        android:src="@drawable/vectorkey" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="183dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/mulish_bold"
+            android:text="@string/Text1_KhoiPhucMatKhau"
+            android:textColor="@color/mau_19"
+            android:textSize="24dp" />
+
+        <TextView
+            android:layout_width="282dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/mulish_semibold"
+            android:text="@string/Text2_KhoiPhucMatKhau"
+            android:textAlignment="center"
+            android:textColor="@color/mau_24" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/mulish_medium"
+            android:text="@string/Text3_KhoiPhucMatKhau"
+            android:textColor="@color/mau_19"
+            android:textSize="13dp" />
+
+        <EditText
+            android:id="@+id/KPMK_email"
+            android:layout_width="354dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edt_radius"
+            android:hint="@string/Text4_KhoiPhucMatKhau"
+            android:paddingStart="20dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/KPMK_xacnhan"
+            android:layout_width="354dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/bt_radius_24"
+            android:fontFamily="@font/mulish_bold"
+            android:text="@string/Text5_KhoiPhucMatKhau"
+            android:textAllCaps="false"
+            android:textColor="@color/mau_6E"
+            android:textSize="20dp" />
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentBottom="true"
+            android:scaleType="fitEnd"
+            android:src="@drawable/hatcapheto" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
