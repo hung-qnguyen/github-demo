@@ -63,7 +63,7 @@
             app:layout_constraintStart_toEndOf="@+id/cart_item_price" />
 
         <TextView
-            android:id="@+id/cart_item_total"
+            android:id="@+id/sub_total"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"

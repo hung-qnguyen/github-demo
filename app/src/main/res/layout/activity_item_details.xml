@@ -93,7 +93,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_quantity" />
 
     <Button
-        android:id="@+id/btn_checkout"
+        android:id="@+id/details_btn_checkout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -112,5 +112,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_checkout" />
+        app:layout_constraintTop_toBottomOf="@+id/details_btn_checkout" />
 </androidx.constraintlayout.widget.ConstraintLayout>

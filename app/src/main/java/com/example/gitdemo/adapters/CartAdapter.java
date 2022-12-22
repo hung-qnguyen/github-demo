@@ -2,16 +2,13 @@ package com.example.gitdemo.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -79,7 +76,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
             drinkName = itemView.findViewById(R.id.cart_drink_name);
             tvPrice = itemView.findViewById(R.id.cart_item_price);
             tvItemQuant = itemView.findViewById(R.id.cart_item_quant);
-            tvItemTotal = itemView.findViewById(R.id.cart_item_total);
+            tvItemTotal = itemView.findViewById(R.id.sub_total);
             drinkImage = itemView.findViewById(R.id.cart_drink_img);
             removeBtn = itemView.findViewById(R.id.cart_rm_btn);
 //            cardView = itemView.findViewById(R.id.cardView);

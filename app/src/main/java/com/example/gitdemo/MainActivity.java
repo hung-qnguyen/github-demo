@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-//    public static List<Cart> cartList=new ArrayList<>();
     private List<Menu> mMenu = new ArrayList<>();
     private RecyclerView mRecyclerView;
     private MenuAdapter mMenuAdapter;

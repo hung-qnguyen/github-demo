@@ -8,6 +8,7 @@ import java.util.List;
 
 public class Utils {
     //Define a static instance of the Utils class
+    public static final String CURRENCY = " đồng";
     private static Utils instance;
 
     private static List<Menu> allDrinks;
