@@ -29,7 +29,7 @@ public class Utils {
         //Add Initial Data
     }
 
-    private void initDummyData(/*List<Menu> allDrinks*/){
+    private void initDummyData(){
         for (int i = 1; i<=20; i++){
             allDrinks.add(new Menu("Drink Title #"+i,"https://cdn3.iconfinder.com/data/icons/watercolorcafe/512/Latte.png"
                     , 4000*i));

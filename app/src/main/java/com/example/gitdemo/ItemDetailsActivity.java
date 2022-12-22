@@ -74,8 +74,6 @@ public class ItemDetailsActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     cartItem = new Cart(menuDetails, quantity, itemTotal);
-//                    cartItem.setQuantity(quantity);
-//                    cartItem.setItemTotal(itemTotal);
                     Utils.getInstance().addToCart(cartItem);
                     Log.d(TAG_CHECK_CART, "Item name: " + cartItem.getMenuItem().getDrinkName()
                             + "\nItem quantity: " + cartItem.getQuantity()
@@ -120,7 +118,6 @@ public class ItemDetailsActivity extends AppCompatActivity {
     private void setDetailsData(Menu menu) {
         drinkName.setText(menu.getDrinkName());
         price = menu.getPrice();
-//        priceText = String.valueOf(price) + " đồng";
         tvPrice.setText(priceText);
         Glide.with(this)
                 .asBitmap()

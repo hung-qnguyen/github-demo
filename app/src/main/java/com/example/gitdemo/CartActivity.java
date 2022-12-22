@@ -16,24 +16,22 @@ import com.example.gitdemo.utils.Utils;
 
 import java.util.List;
 
-public class CartActivity extends AppCompatActivity /*implements CartAdapter.OnCartListener*/ {
+public class CartActivity extends AppCompatActivity implements CartAdapter.OnCartListener {
     private static final String TAG_CALC_TOTAL = "calculate_total";
-    private float total=0, subTotal=0;
+
     private int deliveryFee = 4000;
-    private boolean isRemoved = false;
-//    private List<Cart> mCartList = new ArrayList<>();
     private RecyclerView mCartRV;
     private CartAdapter mCartAdapter;
     private TextView tvSubTotal, tvDeliveryFee, tvTotal;
     private Button btnToMenu, btnCheckout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
         Intent intent = getIntent();
-//        mCartList.add(intent.getParcelableExtra(EXTRA_DETAILS_TO_CART));
         mCartRV = findViewById(R.id.cart_rv);
-        mCartAdapter = new CartAdapter(this);
+        mCartAdapter = new CartAdapter(this, this);
         mCartRV.setAdapter(mCartAdapter);
         mCartRV.setLayoutManager(new LinearLayoutManager(this));
         mCartAdapter.setCartList(Utils.getInstance().getCartList());
@@ -50,24 +48,24 @@ public class CartActivity extends AppCompatActivity /*implements CartAdapter.OnC
         btnCheckout = findViewById(R.id.btn_checkout);
     }
 
-    private void calculateTotals (){
+    private void calculateTotals() {
         List<Cart> cartList = Utils.getInstance().getCartList();
-
-        for (Cart c : cartList){
+        float total = 0, subTotal = 0;
+        for (Cart c : cartList) {
             subTotal += c.getItemTotal();
-//        Log.d(TAG_CALC_TOTAL,"Item Total: " + c.getItemTotal()
-//                + "\nPosition: " + cartList.indexOf(c));
         }
-        total = subTotal+deliveryFee;
-        tvSubTotal.setText(String.valueOf(subTotal)+Utils.CURRENCY);
-        tvDeliveryFee.setText(String.valueOf(deliveryFee)+Utils.CURRENCY);
-        tvTotal.setText(String.valueOf(total)+Utils.CURRENCY);
-
+        total = subTotal + deliveryFee;
+        tvSubTotal.setText(String.valueOf(subTotal) + " đồng");
+        tvDeliveryFee.setText(String.valueOf(deliveryFee) + " đồng");
+        tvTotal.setText(String.valueOf(total) + " đồng");
+        Log.d(TAG_CALC_TOTAL, "Sub Total: " + subTotal
+                + "\nTotal: " + total);
     }
 
-//    @Override
-//    public void onCartClick(int position) {
-//        Utils.getInstance().getCartList().remove(Utils.getInstance().getCartList().get(position));
-////        calculateTotals();
-//    }
+    @Override
+    public void onCartClick(int position) {
+        Utils.getInstance().getCartList().remove(Utils.getInstance().getCartList().get(position));
+        mCartAdapter.notifyItemRemoved(position);
+        calculateTotals();
+    }
 }
