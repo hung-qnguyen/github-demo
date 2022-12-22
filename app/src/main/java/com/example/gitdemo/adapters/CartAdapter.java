@@ -12,8 +12,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.gitdemo.CartActivity;
 import com.example.gitdemo.R;
 import com.example.gitdemo.models.Cart;
+import com.example.gitdemo.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,9 +24,10 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
 
     private List<Cart> mCartList = new ArrayList<>();
     private Context mContext;
-
-    public CartAdapter(Context context) {
+//    private OnCartListener mOnCartListener;
+    public CartAdapter(Context context/*, OnCartListener onCartListener*/) {
         this.mContext = context;
+//        this.mOnCartListener = onCartListener;
     }
 
     public void setCartList(List<Cart> CartList) {
@@ -36,7 +39,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     @Override
     public CartViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cart_item_layout, parent, false);
-        return new CartAdapter.CartViewHolder(view);
+        return new CartAdapter.CartViewHolder(view/*, mOnCartListener*/);
     }
 
     @Override
@@ -51,13 +54,6 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         holder.tvItemQuant.setText(String.valueOf(mCartList.get(position).getQuantity()));
         float itemTotal = mCartList.get(position).getMenuItem().getPrice() * mCartList.get(position).getQuantity();
         holder.tvItemTotal.setText(String.valueOf(itemTotal));
-        holder.removeBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mCartList.remove(mCartList.get(holder.getAdapterPosition()));
-                notifyDataSetChanged();
-            }
-        });
     }
 
     @Override
@@ -65,13 +61,14 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         return mCartList.size();
     }
 
-    public class CartViewHolder extends RecyclerView.ViewHolder {
+    public class CartViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private TextView drinkName, tvPrice, tvItemQuant, tvItemTotal;
         private ImageView drinkImage;
         private ImageButton removeBtn;
+//        private OnCartListener onCartListener;
 
         //        private CardView cardView;
-        public CartViewHolder(@NonNull View itemView) {
+        public CartViewHolder(@NonNull View itemView/*, OnCartListener onCartListener*/) {
             super(itemView);
             drinkName = itemView.findViewById(R.id.cart_drink_name);
             tvPrice = itemView.findViewById(R.id.cart_item_price);
@@ -79,7 +76,27 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
             tvItemTotal = itemView.findViewById(R.id.sub_total);
             drinkImage = itemView.findViewById(R.id.cart_drink_img);
             removeBtn = itemView.findViewById(R.id.cart_rm_btn);
+
+            removeBtn.setOnClickListener(this);
 //            cardView = itemView.findViewById(R.id.cardView);
         }
+
+        @Override
+        public void onClick(View view) {
+//            onCartListener.onCartClick(getAdapterPosition());
+            // Get the position of the item that was clicked.
+            int mPosition = getLayoutPosition();
+// Use that to access the affected item in mWordList.
+            Cart element = mCartList.get(mPosition);
+// Change the word in the mWordList.
+            mCartList.remove(mPosition);
+// Notify the adapter that the data has changed so it can
+// update the RecyclerView to display the data.
+            notifyDataSetChanged();
+        }
     }
+
+//    public interface OnCartListener {
+//        void onCartClick(int position);
+//    }
 }

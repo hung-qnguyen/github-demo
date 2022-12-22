@@ -67,12 +67,10 @@ public class Utils {
     }
 
     public boolean handleAlreadyAdded(Menu drinks) {
-        List<Cart> alreadyAddedToCart = Utils.getInstance().getCartList();
         boolean existInCart = false;
-        for (Cart c : alreadyAddedToCart) {
+        for (Cart c : cartList) {
             if (c.getMenuItem().getDrinkName().equals(drinks.getDrinkName())) {
                 existInCart = true;
-
             }
         }
         return existInCart;
@@ -80,4 +78,8 @@ public class Utils {
     public void addToCart(Cart cart){
         cartList.add(cart);
     }
+
+
+
+
 }

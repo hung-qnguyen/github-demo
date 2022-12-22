@@ -16,10 +16,11 @@ import com.example.gitdemo.utils.Utils;
 
 import java.util.List;
 
-public class CartActivity extends AppCompatActivity {
+public class CartActivity extends AppCompatActivity /*implements CartAdapter.OnCartListener*/ {
     private static final String TAG_CALC_TOTAL = "calculate_total";
-    private float subTotal, total;
+    private float total=0, subTotal=0;
     private int deliveryFee = 4000;
+    private boolean isRemoved = false;
 //    private List<Cart> mCartList = new ArrayList<>();
     private RecyclerView mCartRV;
     private CartAdapter mCartAdapter;
@@ -38,9 +39,7 @@ public class CartActivity extends AppCompatActivity {
         mCartAdapter.setCartList(Utils.getInstance().getCartList());
         initViews();
         calculateTotals();
-        tvSubTotal.setText(String.valueOf(subTotal)+Utils.CURRENCY);
-        tvDeliveryFee.setText(String.valueOf(deliveryFee)+Utils.CURRENCY);
-        tvTotal.setText(String.valueOf(total)+Utils.CURRENCY);
+
     }
 
     private void initViews() {
@@ -53,12 +52,22 @@ public class CartActivity extends AppCompatActivity {
 
     private void calculateTotals (){
         List<Cart> cartList = Utils.getInstance().getCartList();
+
         for (Cart c : cartList){
             subTotal += c.getItemTotal();
 //        Log.d(TAG_CALC_TOTAL,"Item Total: " + c.getItemTotal()
 //                + "\nPosition: " + cartList.indexOf(c));
         }
         total = subTotal+deliveryFee;
+        tvSubTotal.setText(String.valueOf(subTotal)+Utils.CURRENCY);
+        tvDeliveryFee.setText(String.valueOf(deliveryFee)+Utils.CURRENCY);
+        tvTotal.setText(String.valueOf(total)+Utils.CURRENCY);
+
     }
 
+//    @Override
+//    public void onCartClick(int position) {
+//        Utils.getInstance().getCartList().remove(Utils.getInstance().getCartList().get(position));
+////        calculateTotals();
+//    }
 }
