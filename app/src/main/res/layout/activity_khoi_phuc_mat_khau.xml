@@ -43,13 +43,13 @@
             android:textSize="24dp" />
 
         <TextView
-            android:layout_width="282dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/mulish_semibold"
             android:text="@string/Text2_KhoiPhucMatKhau"
-            android:textAlignment="center"
             android:textColor="@color/mau_24" />
 
         <TextView
@@ -63,6 +63,7 @@
             android:textSize="13dp" />
 
         <EditText
+            android:inputType="textEmailAddress"
             android:id="@+id/KPMK_email"
             android:layout_width="354dp"
             android:layout_height="56dp"

@@ -4,8 +4,7 @@
 CHEAP,
 DILICIOUS &amp;
 SWIFT</string>
-    <string name="Text2_Intro">Enjoy quality brew
-with the finest of flavours</string>
+    <string name="Text2_Intro">Enjoy quality brew\nwith the finest of flavours</string>
     <string name="Text3_Intro">Let\'s go</string>
     <string name="Text1_DangNhap">Sign in</string>
     <string name="Text2_DangNhap">Email or phone number</string>
@@ -31,8 +30,7 @@ with the finest of flavours</string>
     <string name="Text13_DangKy">Already have an account?</string>
     <string name="Text14_DangKy">Sign in</string>
     <string name="Text1_KhoiPhucMatKhau">Recovery password</string>
-    <string name="Text2_KhoiPhucMatKhau"> Please enter the address associated
-with your account and we’ll send an code</string>
+    <string name="Text2_KhoiPhucMatKhau"> Please enter the address associated\nwith your account and we’ll send an code</string>
     <string name="Text3_KhoiPhucMatKhau">Email or phone number</string>
     <string name="Text4_KhoiPhucMatKhau">example@email.com</string>
     <string name="Text5_KhoiPhucMatKhau">Submit</string>

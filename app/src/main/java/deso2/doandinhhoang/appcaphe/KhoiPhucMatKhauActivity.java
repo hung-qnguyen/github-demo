@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,6 +37,10 @@ public class KhoiPhucMatKhauActivity extends AppCompatActivity {
     }
 
     private void KhoiPhuc(){
+        if (TextUtils.isEmpty(edtKPMKemail.getText().toString())){
+            edtKPMKemail.setError("This field is required");
+            return;
+        }
         FirebaseAuth auth = FirebaseAuth.getInstance();
         String emailAddress = edtKPMKemail.getText().toString();
 
@@ -45,6 +50,8 @@ public class KhoiPhucMatKhauActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
                             Toast.makeText(KhoiPhucMatKhauActivity.this, "Please Check Your Mail", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(KhoiPhucMatKhauActivity.this, "Invalid Email Address", Toast.LENGTH_SHORT).show();
                         }
                     }
 
