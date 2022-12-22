@@ -201,7 +201,7 @@
             android:fontFamily="@font/mulish_bold"
             android:text="@string/Text12_DangKy"
             android:textAllCaps="false"
-            android:textColor="@color/mau_A9"
+            android:textColor="#EB996E"
             android:textSize="20dp" />
 
         <TextView
