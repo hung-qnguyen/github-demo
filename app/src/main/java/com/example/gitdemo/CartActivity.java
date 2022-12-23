@@ -50,7 +50,7 @@ public class CartActivity extends AppCompatActivity implements CartAdapter.OnCar
 
     private void calculateTotals() {
         List<Cart> cartList = Utils.getInstance().getCartList();
-        float total = 0, subTotal = 0;
+        int total = 0, subTotal = 0;
         for (Cart c : cartList) {
             subTotal += c.getItemTotal();
         }

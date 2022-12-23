@@ -44,16 +44,16 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull CartViewHolder holder, int position) {
-        holder.drinkName.setText(mCartList.get(position).getMenuItem().getDrinkName());
-        holder.tvPrice.setText(String.valueOf(mCartList.get(position).getMenuItem().getPrice()));
+        holder.drinkName.setText(mCartList.get(position).getCartItem().getDrinkName());
+        holder.tvPrice.setText(String.valueOf(mCartList.get(position).getCartItem().getPrice()));
         Glide.with(mContext)
                 .asBitmap()
                 .placeholder(R.drawable.drink_placeholder)
-                .load(mCartList.get(position).getMenuItem().getImgURL())
+                .load(mCartList.get(position).getCartItem().getImgURL())
                 .into(holder.drinkImage);
         holder.tvItemQuant.setText(String.valueOf(mCartList.get(position).getQuantity()));
-        float itemTotal = mCartList.get(position).getMenuItem().getPrice() * mCartList.get(position).getQuantity();
-        holder.tvItemTotal.setText(String.valueOf(itemTotal));
+//        float itemTotal = mCartList.get(position).getCartItem().getPrice() * mCartList.get(position).getQuantity();
+        holder.tvItemTotal.setText(String.valueOf(mCartList.get(position).getItemTotal()));
     }
 
     @Override

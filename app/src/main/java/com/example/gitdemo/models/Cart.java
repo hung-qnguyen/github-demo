@@ -4,22 +4,22 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Cart implements Parcelable {
-    private Beverage beverageItem;
+    private Beverage cartItem;
     private int quantity;
-    private float itemTotal;
+    private int itemTotal;
     //TODO: Add ItemTotal and alreadyInCart to Cart Model
 
 
-    public Cart(Beverage beverageItem, int quantity, float itemTotal) {
-        this.beverageItem = beverageItem;
+    public Cart(Beverage cartItem, int quantity, int itemTotal) {
+        this.cartItem = cartItem;
         this.quantity = quantity;
         this.itemTotal = itemTotal;
     }
 
     protected Cart(Parcel in) {
-        beverageItem = in.readParcelable(Beverage.class.getClassLoader());
+        cartItem = in.readParcelable(Beverage.class.getClassLoader());
         quantity = in.readInt();
-        itemTotal = in.readFloat();
+        itemTotal = in.readInt();
     }
 
     public static final Creator<Cart> CREATOR = new Creator<Cart>() {
@@ -34,12 +34,12 @@ public class Cart implements Parcelable {
         }
     };
 
-    public Beverage getMenuItem() {
-        return beverageItem;
+    public Beverage getCartItem() {
+        return cartItem;
     }
 
-    public void setMenuItem(Beverage beverageItem) {
-        this.beverageItem = beverageItem;
+    public void setCartItem(Beverage cartItem) {
+        this.cartItem = cartItem;
     }
 
     public int getQuantity() {
@@ -50,11 +50,11 @@ public class Cart implements Parcelable {
         this.quantity = quantity;
     }
 
-    public float getItemTotal() {
+    public int getItemTotal() {
         return itemTotal;
     }
 
-    public void setItemTotal(float itemTotal) {
+    public void setItemTotal(int itemTotal) {
         this.itemTotal = itemTotal;
     }
 
@@ -65,8 +65,8 @@ public class Cart implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeParcelable(beverageItem, i);
+        parcel.writeParcelable(cartItem, i);
         parcel.writeInt(quantity);
-        parcel.writeFloat(itemTotal);
+        parcel.writeInt(itemTotal);
     }
 }

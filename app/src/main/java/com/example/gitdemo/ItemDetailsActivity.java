@@ -32,8 +32,8 @@ public class ItemDetailsActivity extends AppCompatActivity {
     private Beverage beverageDetails;
     private String priceText;
     private int quantity = 1;
-    private float price;
-    private float itemTotal;
+    private int price;
+    private int itemTotal;
     private boolean existInCart = false;
 
     @Override
@@ -75,7 +75,7 @@ public class ItemDetailsActivity extends AppCompatActivity {
                 public void onClick(View view) {
                     cartItem = new Cart(beverageDetails, quantity, itemTotal);
                     Utils.getInstance().addToCart(cartItem);
-                    Log.d(TAG_CHECK_CART, "Item name: " + cartItem.getMenuItem().getDrinkName()
+                    Log.d(TAG_CHECK_CART, "Item name: " + cartItem.getCartItem().getDrinkName()
                             + "\nItem quantity: " + cartItem.getQuantity()
                             + "\nItem Total: " + cartItem.getItemTotal()
                             + "\nPosition: " + Utils.getInstance().getCartList().indexOf(cartItem));
