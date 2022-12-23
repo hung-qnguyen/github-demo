@@ -34,6 +34,8 @@ SWIFT</string>
     <string name="Text3_KhoiPhucMatKhau">Email or phone number</string>
     <string name="Text4_KhoiPhucMatKhau">example@email.com</string>
     <string name="Text5_KhoiPhucMatKhau">Submit</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
