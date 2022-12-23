@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.gitdemo.models.Cart;
-import com.example.gitdemo.models.Menu;
+import com.example.gitdemo.models.Beverage;
 import com.example.gitdemo.utils.Utils;
 
 public class ItemDetailsActivity extends AppCompatActivity {
@@ -29,7 +29,7 @@ public class ItemDetailsActivity extends AppCompatActivity {
 
 
     private Cart cartItem;
-    private Menu menuDetails;
+    private Beverage beverageDetails;
     private String priceText;
     private int quantity = 1;
     private float price;
@@ -43,9 +43,9 @@ public class ItemDetailsActivity extends AppCompatActivity {
         initViews();
         Intent intent = getIntent();
         if (getIntent().hasExtra(EXTRA_DETAILS)) {
-            menuDetails = intent.getParcelableExtra(EXTRA_DETAILS);
-            Utils.getInstance().handleAlreadyAdded(menuDetails);
-            setDetailsData(menuDetails);
+            beverageDetails = intent.getParcelableExtra(EXTRA_DETAILS);
+            Utils.getInstance().handleAlreadyAdded(beverageDetails);
+            setDetailsData(beverageDetails);
             UpdatePrice(quantity);
         }
         btnAdd.setOnClickListener(new View.OnClickListener() {
@@ -67,13 +67,13 @@ public class ItemDetailsActivity extends AppCompatActivity {
                 }
             }
         });
-        if (Utils.getInstance().handleAlreadyAdded(menuDetails)) {
+        if (Utils.getInstance().handleAlreadyAdded(beverageDetails)) {
             btnAddCart.setEnabled(false);
         } else {
             btnAddCart.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    cartItem = new Cart(menuDetails, quantity, itemTotal);
+                    cartItem = new Cart(beverageDetails, quantity, itemTotal);
                     Utils.getInstance().addToCart(cartItem);
                     Log.d(TAG_CHECK_CART, "Item name: " + cartItem.getMenuItem().getDrinkName()
                             + "\nItem quantity: " + cartItem.getQuantity()
@@ -115,14 +115,14 @@ public class ItemDetailsActivity extends AppCompatActivity {
         btnReturn = findViewById(R.id.btn_return);
     }
 
-    private void setDetailsData(Menu menu) {
-        drinkName.setText(menu.getDrinkName());
-        price = menu.getPrice();
+    private void setDetailsData(Beverage beverage) {
+        drinkName.setText(beverage.getDrinkName());
+        price = beverage.getPrice();
         tvPrice.setText(priceText);
         Glide.with(this)
                 .asBitmap()
                 .placeholder(R.drawable.drink_placeholder)
-                .load(menu.getImgURL())
+                .load(beverage.getImgURL())
                 .into(drinkImage);
     }
 

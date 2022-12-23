@@ -1,7 +1,7 @@
 package com.example.gitdemo.utils;
 
 import com.example.gitdemo.models.Cart;
-import com.example.gitdemo.models.Menu;
+import com.example.gitdemo.models.Beverage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,30 +11,25 @@ public class Utils {
     public static final String CURRENCY = " đồng";
     private static Utils instance;
 
-    private static List<Menu> allDrinks;
+    private static List<Beverage> allDrinks;
     private static List<Cart> cartList;
 
     private Utils(){
         if (null==allDrinks){
             allDrinks = new ArrayList<>();
-//            initData();
-            initDummyData();
         }
         if (null==cartList){
             cartList = new ArrayList<>();
         }
     }
 
-    private void initData() {
-        //Add Initial Data
-    }
 
-    private void initDummyData(){
-        for (int i = 1; i<=20; i++){
-            allDrinks.add(new Menu("Drink Title #"+i,"https://cdn3.iconfinder.com/data/icons/watercolorcafe/512/Latte.png"
-                    , 4000*i));
-        }
-    }
+//    private void initDummyData(){
+//        for (int i = 1; i<=20; i++){
+//            allDrinks.add(new Beverage("Drink Title #"+i,"https://cdn3.iconfinder.com/data/icons/watercolorcafe/512/Latte.png"
+//                    , 4000*i));
+//        }
+//    }
 
     public static synchronized Utils getInstance() {
         //make this class a singleton
@@ -50,11 +45,11 @@ public class Utils {
 //        Utils.instance = instance;
 //    }
 
-    public static List<Menu> getAllDrinks() {
+    public static List<Beverage> getAllDrinks() {
         return allDrinks;
     }
 
-    public static void setAllDrinks(List<Menu> allDrinks) {
+    public static void setAllDrinks(List<Beverage> allDrinks) {
         Utils.allDrinks = allDrinks;
     }
 
@@ -66,7 +61,7 @@ public class Utils {
         Utils.cartList = cartList;
     }
 
-    public boolean handleAlreadyAdded(Menu drinks) {
+    public boolean handleAlreadyAdded(Beverage drinks) {
         boolean existInCart = false;
         for (Cart c : cartList) {
             if (c.getMenuItem().getDrinkName().equals(drinks.getDrinkName())) {

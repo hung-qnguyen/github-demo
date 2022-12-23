@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.gitdemo.ItemDetailsActivity;
 import com.example.gitdemo.R;
-import com.example.gitdemo.models.Menu;
+import com.example.gitdemo.models.Beverage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,15 +24,15 @@ import java.util.List;
 public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.myViewHolder> {
 
     public static final String EXTRA_DETAILS = "com.example.gitdemo.adapters.SEND_DETAILS";
-    private List<Menu> mMenu = new ArrayList();
+    private List<Beverage> mBeverages = new ArrayList();
     private Context mContext;
 
     public MenuAdapter(Context context) {
         this.mContext = context;
     }
 
-    public void setMenu(List<Menu> menu) {
-        this.mMenu = menu;
+    public void setMenu(List<Beverage> beverages) {
+        this.mBeverages = beverages;
         notifyDataSetChanged();
     }
 
@@ -45,18 +45,18 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.myViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull myViewHolder holder, int position) {
-        holder.drinkName.setText(mMenu.get(position).getDrinkName());
-        holder.tvPrice.setText(String.valueOf(mMenu.get(position).getPrice()));
+        holder.drinkName.setText(mBeverages.get(position).getDrinkName());
+        holder.tvPrice.setText(String.valueOf(mBeverages.get(position).getPrice()));
         Glide.with(mContext)
                 .asBitmap()
                 .placeholder(R.drawable.drink_placeholder)
-                .load(mMenu.get(position).getImgURL())
+                .load(mBeverages.get(position).getImgURL())
                 .into(holder.drinkImage);
         holder.detailsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(mContext, ItemDetailsActivity.class);
-                intent.putExtra(EXTRA_DETAILS,mMenu.get(holder.getAdapterPosition()));
+                intent.putExtra(EXTRA_DETAILS, mBeverages.get(holder.getAdapterPosition()));
                 mContext.startActivity(intent);
             }
         });
@@ -64,7 +64,9 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.myViewHolder> 
 
     @Override
     public int getItemCount() {
-        return mMenu.size();
+        if (mBeverages != null)
+            return mBeverages.size();
+        else return 0;
     }
 
     public class myViewHolder extends RecyclerView.ViewHolder{
