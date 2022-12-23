@@ -15,7 +15,7 @@ public class SplashNe extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(SplashNe.this,MainActivity.class));
+                startActivity(new Intent(SplashNe.this,IntroActivity.class));
                 overridePendingTransition(R.anim.slide_in_right,R.anim.slide_in_left);
                 finish();
             }
