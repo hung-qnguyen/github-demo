@@ -68,7 +68,7 @@ public class MenuFragment extends Fragment {
             }
         });
         mSearchView.setSubmitButtonEnabled(true);
-        mSearchView.setIconifiedByDefault(false);
+//        mSearchView.setIconifiedByDefault(false);
 
         mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -97,10 +97,10 @@ public class MenuFragment extends Fragment {
     }
 
     public void initSpinner(){
-        mSpinnerList.add("Default");
-        mSpinnerList.add("Sort by Name");
-        mSpinnerList.add("Sort by Price Ascending");
-        mSpinnerList.add("Sort by Price Descending");
+        mSpinnerList.add("Mặc Định");
+        mSpinnerList.add("A đến Z");
+        mSpinnerList.add("Giá thấp dến cao");
+        mSpinnerList.add("Giá cao đến thấp");
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(getActivity()
                 , androidx.appcompat.R.layout.support_simple_spinner_dropdown_item
                 ,mSpinnerList);
