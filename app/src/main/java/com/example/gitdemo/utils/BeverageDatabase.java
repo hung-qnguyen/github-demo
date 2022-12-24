@@ -36,7 +36,7 @@ public abstract class BeverageDatabase extends RoomDatabase {
             synchronized (BeverageDatabase.class) {
                 if (instance == null) {
                     instance = Room.databaseBuilder(context.getApplicationContext(),
-                                    BeverageDatabase.class, "word_database")
+                                    BeverageDatabase.class, DB_NAME)
                             // Wipes and rebuilds instead of migrating 
                             // if no Migration object.
                             // Migration is not part of this practical.
@@ -53,7 +53,7 @@ public abstract class BeverageDatabase extends RoomDatabase {
     private static RoomDatabase.Callback roomCallback = new RoomDatabase.Callback() {
         @Override
         public void onCreate(@NonNull SupportSQLiteDatabase db) {
-            super.onCreate(db);
+            super.onOpen(db);
             new PopulateDbAsyncTask(instance).execute();
         }
     };

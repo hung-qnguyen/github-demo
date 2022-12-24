@@ -16,6 +16,7 @@ import java.util.List;
 public class BeverageRepository {
     private BeverageDao beverageDao;
     private LiveData<List<Beverage>> allBeverages;
+//    private LiveData<List<Beverage>> filteredBeverages;
 
 
     public BeverageRepository(Application application) {
@@ -42,5 +43,19 @@ public class BeverageRepository {
 
     public LiveData<List<Beverage>> getAllBeverages() {
         return allBeverages;
+    }
+
+    public LiveData<List<Beverage>> sortBeveragesByName() {
+        return beverageDao.sortBeveragesByName();
+    }
+    public LiveData<List<Beverage>> sortBeveragesByPriceAsc() {
+        return beverageDao.sortBeveragesByPriceAsc();
+    }
+    public LiveData<List<Beverage>> sortBeveragesByPriceDesc() {
+        return beverageDao.sortBeveragesByPriceDesc();
+    }
+
+    public LiveData<List<Beverage>> getBeverageByName(String drinkName) {
+        return beverageDao.getBeverageByName(drinkName);
     }
 }

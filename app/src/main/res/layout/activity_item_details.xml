@@ -55,8 +55,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="1"
-        android:textSize="24sp"
         android:textAlignment="center"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="@+id/textView3"
         app:layout_constraintStart_toStartOf="@+id/textView3"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -99,9 +99,9 @@
         android:layout_margin="16dp"
         android:text="Checkout"
         android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_cart_btn" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btn_return"
@@ -109,8 +109,10 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:text="Return to Menu"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/details_btn_checkout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/details_btn_checkout" />
+        app:layout_constraintTop_toBottomOf="@+id/add_cart_btn"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

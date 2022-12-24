@@ -20,23 +20,39 @@ public class BeverageViewModel extends AndroidViewModel {
         allBeverages = repository.getAllBeverages();
     }
 
-    public void insert(Beverage beverage) {
+    public void insertBeverage(Beverage beverage) {
         repository.insertBeverage(beverage);
     }
 
-    public void update(Beverage beverage) {
+    public void updateBeverage(Beverage beverage) {
         repository.updateBeverage(beverage);
     }
 
-    public void delete(Beverage beverage) {
+    public void deleteBeverage(Beverage beverage) {
         repository.deleteBeverage(beverage);
     }
 
-    public void deleteAllBeverages(){
+    public void deleteAllBeverages() {
         repository.deleteAllBeverages();
     }
 
     public LiveData<List<Beverage>> getAllBeverages() {
         return allBeverages;
+    }
+
+    public LiveData<List<Beverage>> sortBeveragesByName() {
+        return repository.sortBeveragesByName();
+    }
+
+    public LiveData<List<Beverage>> sortBeveragesByPriceAsc() {
+        return repository.sortBeveragesByPriceAsc();
+    }
+
+    public LiveData<List<Beverage>> sortBeveragesByPriceDesc() {
+        return repository.sortBeveragesByPriceDesc();
+    }
+
+    public LiveData<List<Beverage>> getBeverageByName(String drinkName) {
+        return repository.getBeverageByName(drinkName);
     }
 }

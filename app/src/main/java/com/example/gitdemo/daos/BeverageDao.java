@@ -31,9 +31,15 @@ public interface BeverageDao {
     @Query("SELECT * FROM beverage_table")
     LiveData<List<Beverage>> getAllBeverages();
 
-//    @Query("SELECT * FROM beverage_table ORDER BY drink_name ASC")
-//    LiveData<List<Beverage>> orderBeveragesByName();
+    @Query("SELECT * FROM beverage_table ORDER BY drink_name ASC")
+    LiveData<List<Beverage>> sortBeveragesByName();
 
-//    @Query("SELECT * FROM beverage_table /*LIKE*/WHERE drink_name =:drinkName")
-//            List<Beverage> getBeverageByName(String drinkName);
+    @Query("SELECT * FROM beverage_table ORDER BY price ASC")
+    LiveData<List<Beverage>> sortBeveragesByPriceAsc();
+
+    @Query("SELECT * FROM beverage_table ORDER BY price DESC")
+    LiveData<List<Beverage>> sortBeveragesByPriceDesc();
+
+    @Query("SELECT * FROM beverage_table WHERE drink_name LIKE '%'||:drinkName||'%'")
+    LiveData<List<Beverage>> getBeverageByName(String drinkName);
 }
