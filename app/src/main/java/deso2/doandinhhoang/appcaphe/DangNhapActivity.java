@@ -48,7 +48,7 @@ public class DangNhapActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
                             Toast.makeText(DangNhapActivity.this, "Đăng Nhập Thành công", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(DangNhapActivity.this, IntroActivity.class);
+                            Intent intent = new Intent(DangNhapActivity.this, MainActivity.class);
                             startActivity(intent);
                             overridePendingTransition(R.anim.slide_in_right,R.anim.slide_in_left);
                         }else {
