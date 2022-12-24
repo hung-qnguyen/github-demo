@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/home" android:title="Home"
+    <item android:id="@+id/home" android:title="Trang Chủ"
         android:icon="@drawable/home" />
     <item android:id="@+id/menu" android:title="Menu"
         android:icon="@drawable/menu" />
-    <item android:id="@+id/cart" android:title="Cart"
+    <item android:id="@+id/cart" android:title="Giỏ Hàng"
         android:icon="@drawable/cart" />
-    <item android:id="@+id/account" android:title="Account"
-        android:icon="@drawable/user" />
+    <item android:id="@+id/settings" android:title="Cài Đặt"
+        android:icon="@drawable/ic_settings" />
 
 </menu>

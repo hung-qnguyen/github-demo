@@ -23,7 +23,7 @@ public class IntroActivity extends AppCompatActivity {
         btn_letgo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(IntroActivity.this, DangNhapActivity.class);
+                Intent intent = new Intent(IntroActivity.this, MainActivity.class);
                 startActivity(intent);
 
             }

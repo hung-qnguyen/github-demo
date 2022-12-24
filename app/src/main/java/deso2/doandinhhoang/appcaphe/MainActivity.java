@@ -1,20 +1,19 @@
 package deso2.doandinhhoang.appcaphe;
 
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
-import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TableLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import fragment.CartFragment;
 import fragment.ViewPagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
@@ -29,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
 
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         viewPager.setAdapter(adapter);
-
     }
 
     private void anhxa() {
@@ -42,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
-                switch (position){
+                switch (position) {
                     case 0:
                         bottomNavigationView.getMenu().findItem(R.id.home).setChecked(true);
                         break;
@@ -53,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                         bottomNavigationView.getMenu().findItem(R.id.cart).setChecked(true);
                         break;
                     case 3:
-                        bottomNavigationView.getMenu().findItem(R.id.account).setChecked(true);
+                        bottomNavigationView.getMenu().findItem(R.id.settings).setChecked(true);
                         break;
                 }
             }
@@ -68,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
+                switch (item.getItemId()) {
                     case R.id.home:
                         viewPager.setCurrentItem(0);
                         break;
@@ -81,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                         viewPager.setCurrentItem(2);
                         break;
 
-                    case R.id.account:
+                    case R.id.settings:
                         viewPager.setCurrentItem(3);
                         break;
                 }
@@ -91,5 +89,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void navigateToCartFragment() {
+        Fragment cartFragment = new CartFragment();
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.View_pager, cartFragment).commit();
+    }
 
 }

@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
-
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/View_pager"
         android:layout_width="match_parent"
@@ -19,6 +18,8 @@
         android:background="@color/mau_19"
         app:itemIconTint="@color/custom_color_navigation"
         app:itemTextColor="@color/custom_color_navigation"
-        app:menu="@menu/menu_bottom_navigation" />
+        app:menu="@menu/menu_bottom_navigation" >
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </RelativeLayout>

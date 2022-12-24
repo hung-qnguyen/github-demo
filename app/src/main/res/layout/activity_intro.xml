@@ -31,7 +31,6 @@
         app:tint="#80826F66" />
 
     <TextView
-        android:gravity="left"
         android:id="@+id/textView"
         android:layout_width="245dp"
         android:layout_height="200dp"
@@ -39,6 +38,7 @@
         android:layout_marginLeft="29dp"
         android:layout_marginTop="46dp"
         android:fontFamily="@font/mulish_extrabold"
+        android:gravity="left"
         android:text="@string/Text1_Intro"
         android:textColor="#191919"
         android:textSize="40dp" />

@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
-import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
@@ -25,8 +24,7 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
             case 2:
                 return new CartFragment();
             case 3:
-
-                return new AccountFragment();
+                return new SettingsFragment();
             default:
                 return new HomeFragment();
         }
