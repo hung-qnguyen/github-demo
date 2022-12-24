@@ -1,6 +1,7 @@
 package deso2.doandinhhoang.appcaphe;
 
 import static deso2.doandinhhoang.appcaphe.adapters.MenuAdapter.EXTRA_DETAILS;
+import static deso2.doandinhhoang.appcaphe.adapters.PopularAdapter.EXTRA_POPULAR;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
@@ -30,7 +31,7 @@ public class ItemDetailsActivity extends AppCompatActivity {
     private Button btnAddCart, btnCheckout, btnReturn;
 
 
-
+    private Intent intent;
     private Cart cartItem;
     private Beverage beverageDetails;
     private String priceText;
@@ -44,12 +45,10 @@ public class ItemDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_details);
         initViews();
-        Intent intent = getIntent();
         if (getIntent().hasExtra(EXTRA_DETAILS)) {
-            beverageDetails = intent.getParcelableExtra(EXTRA_DETAILS);
-            Utils.getInstance().handleAlreadyAdded(beverageDetails);
-            setDetailsData(beverageDetails);
-            UpdatePrice(quantity);
+           setUpExtras(EXTRA_DETAILS);
+        } else if (getIntent().hasExtra(EXTRA_POPULAR)){
+            setUpExtras(EXTRA_POPULAR);
         }
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -135,5 +134,13 @@ public class ItemDetailsActivity extends AppCompatActivity {
         tvQuantity.setText(String.valueOf(quantity));
         priceText = String.valueOf(itemTotal) + " đồng";
         tvPrice.setText(priceText);
+    }
+
+    private void setUpExtras(String EXTRA){
+//            intent = getIntent();
+            beverageDetails = getIntent().getParcelableExtra(EXTRA);
+            Utils.getInstance().handleAlreadyAdded(beverageDetails);
+        setDetailsData(beverageDetails);
+        UpdatePrice(quantity);
     }
 }

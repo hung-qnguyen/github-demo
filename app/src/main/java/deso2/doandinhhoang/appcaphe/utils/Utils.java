@@ -50,6 +50,10 @@ public class Utils {
         return cartList;
     }
 
+    public static List<Beverage> getPopularList() {
+        return popularList;
+    }
+
     public static void setCartList(List<Cart> cartList) {
         Utils.cartList = cartList;
     }
