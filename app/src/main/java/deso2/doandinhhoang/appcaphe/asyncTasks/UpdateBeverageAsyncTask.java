@@ -17,5 +17,6 @@ public class UpdateBeverageAsyncTask extends AsyncTask<Beverage, Void, Void> {
     protected Void doInBackground(Beverage... beverages) {
         beverageDao.updateBeverage(beverages[0]);
         return null;
+
     }
 }
