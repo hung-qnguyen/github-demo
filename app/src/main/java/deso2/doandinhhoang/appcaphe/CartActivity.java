@@ -2,21 +2,11 @@ package deso2.doandinhhoang.appcaphe;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.Button;
-import android.widget.TextView;
 
-import java.util.List;
-
-import deso2.doandinhhoang.appcaphe.adapters.CartAdapter;
-import deso2.doandinhhoang.appcaphe.models.Cart;
-import deso2.doandinhhoang.appcaphe.utils.Utils;
-import fragment.CartFragment;
+import deso2.doandinhhoang.appcaphe.fragment.CartFragment;
 
 public class CartActivity extends AppCompatActivity {
 

@@ -4,7 +4,6 @@ import static deso2.doandinhhoang.appcaphe.adapters.MenuAdapter.EXTRA_DETAILS;
 import static deso2.doandinhhoang.appcaphe.adapters.PopularAdapter.EXTRA_POPULAR;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,7 +19,6 @@ import com.bumptech.glide.Glide;
 import deso2.doandinhhoang.appcaphe.models.Beverage;
 import deso2.doandinhhoang.appcaphe.models.Cart;
 import deso2.doandinhhoang.appcaphe.utils.Utils;
-import fragment.CartFragment;
 
 public class ItemDetailsActivity extends AppCompatActivity {
     private static final String TAG_CHECK_CART = "check_cart";

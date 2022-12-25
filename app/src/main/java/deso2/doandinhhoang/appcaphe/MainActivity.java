@@ -13,8 +13,8 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import fragment.CartFragment;
-import fragment.ViewPagerAdapter;
+import deso2.doandinhhoang.appcaphe.fragment.CartFragment;
+import deso2.doandinhhoang.appcaphe.fragment.ViewPagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
     private ViewPager viewPager;
