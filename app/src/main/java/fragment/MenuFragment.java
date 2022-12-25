@@ -21,8 +21,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-//import deso2.doandinhhoang.appcaphe.MainActivity;
-
 import deso2.doandinhhoang.appcaphe.R;
 import deso2.doandinhhoang.appcaphe.adapters.MenuAdapter;
 import deso2.doandinhhoang.appcaphe.models.Beverage;
